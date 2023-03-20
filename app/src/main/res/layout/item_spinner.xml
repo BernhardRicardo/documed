@@ -5,6 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="50dp"
+    android:background="#079BAC"
+
     >
 
     <ImageView
@@ -24,10 +26,11 @@
         android:id="@+id/name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:text="Name"
-        android:layout_toRightOf="@id/image"
         android:layout_centerVertical="true"
-        android:layout_marginStart="8dp"/>
+        android:layout_marginStart="8dp"
+        android:layout_toRightOf="@id/image"
+        android:text="Name"
+        android:textColor="@color/white"
+        android:textStyle="bold" />
 
 </RelativeLayout>
