@@ -1,4 +1,4 @@
-package com.android.documed;
+package com.android.documed.Class;
 
 public class SpinnerItem {
     private String mName;

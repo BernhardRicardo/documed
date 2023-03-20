@@ -1,4 +1,4 @@
-package com.android.documed;
+package com.android.documed.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,10 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import com.android.documed.R;
+import com.android.documed.Class.SpinnerAdapter;
+import com.android.documed.Class.SpinnerItem;
 
 import java.util.ArrayList;
 
