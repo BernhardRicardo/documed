@@ -1,10 +1,11 @@
 package com.android.documed.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -20,10 +21,20 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<SpinnerItem> mProfessionList;
     private SpinnerAdapter mLanguageSpinnerAdapter;
     private SpinnerAdapter mProfessionSpinnerAdapter;
+    private Button button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        button = (Button) findViewById(R.id.nextButton);
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openHomeActivity();
+            }
+        });
 
         initLanguageList();
         initProfessionList();
@@ -77,5 +88,10 @@ public class MainActivity extends AppCompatActivity {
         mProfessionList.add(new SpinnerItem("Doctor", R.drawable.ic_doctor));
         mProfessionList.add(new SpinnerItem("Laboratory Assistant", R.drawable.ic_lab_assistant));
         mProfessionList.add(new SpinnerItem("Administrator", R.drawable.ic_admin));
+    }
+
+    public void openHomeActivity(){
+        Intent intent = new Intent(this, HomeActivity.class);
+        startActivity(intent);
     }
 }
