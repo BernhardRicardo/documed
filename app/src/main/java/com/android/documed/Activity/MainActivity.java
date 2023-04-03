@@ -1,7 +1,10 @@
 package com.android.documed.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -9,9 +12,13 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.android.documed.Class.ContainerAndGlobal;
 import com.android.documed.R;
 import com.android.documed.Class.SpinnerAdapter;
 import com.android.documed.Class.SpinnerItem;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 
@@ -22,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
     private SpinnerAdapter mLanguageSpinnerAdapter;
     private SpinnerAdapter mProfessionSpinnerAdapter;
     private Button button;
+    SharedPreferences sp;
+    String professionStr, languageStr;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,12 +38,21 @@ public class MainActivity extends AppCompatActivity {
 
         button = (Button) findViewById(R.id.nextButton);
 
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openHomeActivity();
+        if(ContainerAndGlobal.isFirstTime()){
+            ContainerAndGlobal.setFirstTime(false);
+
+            //Read JSON
+            if(ContainerAndGlobal.getAdminPatientList().size() == 0 && ContainerAndGlobal.getPatientList().size() == 0){
+                try{
+                    String jsonString = ContainerAndGlobal.loadPatientJson(this, "patientsJSON.json");
+                    JSONArray jsonarray = new JSONArray(jsonString);
+                    for(int i = 0; i < jsonarray.length(); i++){
+                        JSONObject json_inside = jsonarray.getJSONObject(i);
+                        ContainerAndGlobal.parsePatientObject(json_inside);
+                    }
+                }catch (Exception e){e.printStackTrace();}
             }
-        });
+        }
 
         initLanguageList();
         initProfessionList();
@@ -46,6 +64,23 @@ public class MainActivity extends AppCompatActivity {
         Spinner spinnerProfession = findViewById(R.id.spinner_profession);
         mProfessionSpinnerAdapter = new SpinnerAdapter(this, mProfessionList);
         spinnerProfession.setAdapter(mProfessionSpinnerAdapter);
+
+        sp = getSharedPreferences("MyUserPrefs", Context.MODE_PRIVATE);
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                professionStr = spinnerProfession.getSelectedItem().toString();
+                languageStr = spinnerLanguages.getSelectedItem().toString();
+
+                SharedPreferences.Editor editor = sp.edit();
+                editor.putString("profession", professionStr);
+                editor.putString("language", languageStr);
+                openHomeActivity();
+            }
+        });
+
+
 
         spinnerLanguages.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override

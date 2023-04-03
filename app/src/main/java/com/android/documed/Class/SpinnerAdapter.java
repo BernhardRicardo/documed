@@ -35,9 +35,9 @@ public class SpinnerAdapter extends ArrayAdapter<SpinnerItem> {
     private  View initView(int position, View convertView, ViewGroup parent){
         if(convertView == null){
             convertView = LayoutInflater.from(getContext()).inflate(
-                    R.layout.item_spinner, parent, false
-            );
+                    R.layout.item_spinner, parent, false);
         }
+
         ImageView imageViewFlag = convertView.findViewById(R.id.image);
         TextView textViewName = convertView.findViewById(R.id.name);
 

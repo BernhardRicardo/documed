@@ -82,7 +82,7 @@
         app:layout_constraintTop_toTopOf="@+id/spinner_profession"
         app:srcCompat="@drawable/ic_down" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/nextButton"
         android:layout_width="314dp"
         android:layout_height="50dp"

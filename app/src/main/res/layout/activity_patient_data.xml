@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lighter_background"
+    tools:context=".Fragment.MenuFragment" >
+
+    <TextView
+        android:id="@+id/tvPatientName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:paddingTop="20dp"
+        android:text="Name"
+        android:textColor="@color/black"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        />
+
+    <TextView
+        android:id="@+id/tvRoomNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/tvPatientName"
+        android:textSize="18sp"
+        android:paddingBottom="10dp"
+        android:textColor="@color/black"
+        android:text="Room" />
+
+    <TextView
+        android:id="@+id/tvBirthDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="25dp"
+        android:layout_below="@+id/tvRoomNumber"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:text="Birth Date" />
+
+    <TextView
+        android:id="@+id/infoBirthDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvRoomNumber"
+        android:textSize="18sp"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/black"
+        android:text=":  "
+        android:layout_marginLeft="190dp"
+        />
+
+    <TextView
+        android:id="@+id/tvSex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="25dp"
+        android:layout_below="@+id/tvBirthDate"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:text="Sex" />
+
+    <TextView
+        android:id="@+id/infoSex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvBirthDate"
+        android:textSize="18sp"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/black"
+        android:text=":  "
+        android:layout_marginLeft="190dp"
+        />
+
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="25dp"
+        android:layout_below="@+id/tvSex"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:text="Status" />
+
+    <TextView
+        android:id="@+id/infoStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvSex"
+        android:textSize="18sp"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/black"
+        android:text=":  "
+        android:layout_marginLeft="190dp"
+        />
+
+    <TextView
+        android:id="@+id/tvAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="25dp"
+        android:layout_below="@+id/tvStatus"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:text="Address" />
+
+    <TextView
+        android:id="@+id/infoAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvStatus"
+        android:textSize="18sp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="25dp"
+        android:textColor="@color/black"
+        android:text=":  "
+        android:layout_marginLeft="190dp"
+        />
+
+    <TextView
+        android:id="@+id/tvPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="25dp"
+        android:layout_below="@+id/tvAddress"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:text="Phone Number" />
+
+    <TextView
+        android:id="@+id/infoPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvAddress"
+        android:textSize="18sp"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/black"
+        android:text=":  "
+        android:layout_marginLeft="190dp"
+        />
+
+    <TextView
+        android:id="@+id/tvInsuranceNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="25dp"
+        android:layout_below="@+id/tvPhone"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:text="Insurance Number" />
+
+    <TextView
+        android:id="@+id/infoInsuranceNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvPhone"
+        android:textSize="18sp"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/black"
+        android:text=":  "
+        android:layout_marginLeft="190dp"
+        />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnBloodTest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:width="320dp"
+        android:padding="29dp"
+        android:background="@drawable/curved_dark_blue_bg"
+        android:text="Blood Test Result"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:layout_below="@id/tvInsuranceNumber"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textAllCaps="false"
+        android:layout_centerHorizontal="true"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnMRT"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:width="320dp"
+        android:padding="29dp"
+        android:background="@drawable/curved_dark_blue_bg"
+        android:text="MRT Result"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:layout_below="@id/btnBloodTest"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textAllCaps="false"
+        android:layout_centerHorizontal="true"
+        />
+</RelativeLayout>
