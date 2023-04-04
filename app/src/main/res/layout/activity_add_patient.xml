@@ -1,180 +1,239 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/lighter_background"
-    tools:context=".Fragment.MenuFragment" >
+    android:id="@+id/scrollView">
 
-    <TextView
-        android:id="@+id/tvTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingTop="36dp"
-        android:text="New Patient"
-        android:textColor="@color/black"
-        android:textSize="34sp"
-        android:textStyle="bold"
-        android:layout_centerHorizontal="true"
-        />
-
-    <TextView
-        android:layout_below="@+id/tvTitle"
-        android:id="@+id/tvName"
-        android:layout_marginTop="25dp"
-        android:layout_marginLeft="25dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:text="Name"
-        tools:layout_editor_absoluteX="12dp"
-        tools:layout_editor_absoluteY="16dp" />
-
-    <EditText
-        android:id="@+id/editTextName"
-        android:layout_below="@+id/tvName"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="" />
-
-    <TextView
-        android:id="@+id/birthDate"
-        android:layout_below="@id/editTextName"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="25dp"
-        android:textSize="18sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Birth Date " />
-
-    <Button
-        android:id="@+id/datePicker"
-        style="?android:spinnerStyle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/birthDate"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"
-        android:layout_marginTop="5dp"
-        android:onClick="openDatePicker"
-        android:text="Date"
-        android:textSize="17.5dp"
-        />
-
-    <TextView
-        android:layout_below="@+id/datePicker"
-        android:id="@+id/tvSex"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="25dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:text="Sex"
-        tools:layout_editor_absoluteX="12dp"
-        tools:layout_editor_absoluteY="16dp" />
-
-    <Spinner
-        android:id="@+id/spinnerSex"
-        android:layout_below="@+id/tvSex"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="18"
-        android:inputType="textPersonName"
-        android:text="" />
-
-    <TextView
-        android:layout_below="@+id/spinnerSex"
-        android:id="@+id/tvAddress"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="25dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:text="Address"
-        tools:layout_editor_absoluteX="12dp"
-        tools:layout_editor_absoluteY="16dp" />
-
-    <EditText
-        android:id="@+id/editTextAddress"
-        android:layout_below="@+id/tvAddress"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="18"
-        android:inputType="textPersonName"
-        android:text="" />
-
-    <TextView
-        android:layout_below="@+id/editTextAddress"
-        android:id="@+id/tvPhoneNumber"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="25dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:text="Phone"
-        tools:layout_editor_absoluteX="12dp"
-        tools:layout_editor_absoluteY="16dp" />
-
-    <EditText
-        android:id="@+id/editPhone"
-        android:layout_below="@+id/tvPhoneNumber"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="" />
+        android:layout_height="match_parent"
+        android:background="@color/lighter_background"
+        tools:context=".Fragment.MenuFragment">
 
 
-    <TextView
-        android:layout_below="@+id/editPhone"
-        android:id="@+id/tvInsurance"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="25dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:text="Insurance Number"
-        tools:layout_editor_absoluteX="12dp"
-        tools:layout_editor_absoluteY="16dp" />
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="36dp"
+            android:text="New Patient"
+            android:textColor="@color/black"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"
+            />
 
-    <EditText
-        android:id="@+id/editTextInsurance"
-        android:layout_below="@+id/tvInsurance"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="" />
+        <TextView
+            android:layout_below="@+id/tvTitle"
+            android:id="@+id/tvName"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="25dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:text="Name"
+            tools:layout_editor_absoluteX="12dp"
+            tools:layout_editor_absoluteY="16dp" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnAdd"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="75dp"
-        android:layout_marginTop="5dp"
-        android:background="@drawable/curved_white"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="120dp"
-        android:textStyle="bold"
-        android:textSize="18sp"
-        android:textAllCaps="false"
-        android:text="Add to List" />
+        <EditText
+            android:id="@+id/editTextName"
+            android:layout_below="@+id/tvName"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/birthDate"
+            android:layout_below="@id/editTextName"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="25dp"
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Birth Date " />
 
 
-</RelativeLayout>
+        <Button
+            android:id="@+id/datePicker"
+            style="?android:spinnerStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/birthDate"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginTop="5dp"
+            android:onClick="openDatePicker"
+            android:text="Date"
+            android:textSize="17.5dp"
+            />
+
+        <TextView
+            android:layout_below="@+id/datePicker"
+            android:id="@+id/tvSex"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="25dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:text="Sex"
+            tools:layout_editor_absoluteX="12dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <Spinner
+            android:id="@+id/spinnerSex"
+            android:layout_below="@+id/tvSex"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="18"
+            android:inputType="textPersonName"
+            android:text="" />
+
+        <TextView
+            android:layout_below="@+id/spinnerSex"
+            android:id="@+id/tvAddress"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="25dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:text="Address"
+            tools:layout_editor_absoluteX="12dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <EditText
+            android:id="@+id/editTextAddress"
+            android:layout_below="@+id/tvAddress"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="18"
+            android:inputType="textPersonName"
+            android:text="" />
+
+        <TextView
+            android:layout_below="@+id/editTextAddress"
+            android:id="@+id/tvPhoneNumber"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="25dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:text="Phone"
+            tools:layout_editor_absoluteX="12dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <EditText
+            android:id="@+id/editPhone"
+            android:layout_below="@+id/tvPhoneNumber"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text="" />
+
+
+        <TextView
+            android:layout_below="@+id/editPhone"
+            android:id="@+id/tvInsurance"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="25dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:text="Insurance Number"
+            tools:layout_editor_absoluteX="12dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <EditText
+            android:id="@+id/editTextInsurance"
+            android:layout_below="@+id/tvInsurance"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text="" />
+
+        <TextView
+            android:layout_below="@+id/editTextInsurance"
+            android:id="@+id/tvNewRoom"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="25dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:text="Room"
+            tools:layout_editor_absoluteX="12dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <EditText
+            android:id="@+id/editTextRoom"
+            android:layout_below="@+id/tvNewRoom"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text=""
+            />
+
+        <TextView
+            android:layout_below="@+id/editTextRoom"
+            android:id="@+id/tvNewBed"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="25dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:text="Bed Number"
+            tools:layout_editor_absoluteX="12dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <EditText
+            android:id="@+id/editTextBed"
+            android:layout_below="@id/tvNewBed"
+            android:layout_marginBottom="50dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text="" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnAdd"
+            android:layout_below="@id/editTextBed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="25dp"
+            android:layout_marginRight="120dp"
+            android:layout_marginBottom="25dp"
+            android:background="@drawable/curved_white"
+            android:text="Add to List"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+</ScrollView>
