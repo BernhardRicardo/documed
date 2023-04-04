@@ -68,20 +68,25 @@ public class MainActivity extends AppCompatActivity {
 
         sp = getSharedPreferences("MyUserPrefs", Context.MODE_PRIVATE);
 
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                professionStr = spinnerProfession.getSelectedItem().toString();
-                languageStr = spinnerLanguages.getSelectedItem().toString();
+        if(sp.contains("profession")){
+            openHomeActivity();
+        }else {
 
-                SharedPreferences.Editor editor = sp.edit();
-                editor.putString("profession", professionStr);
-                editor.putString("language", languageStr);
-                openHomeActivity();
-            }
-        });
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    professionStr = spinnerProfession.getSelectedItem().toString();
+                    languageStr = spinnerLanguages.getSelectedItem().toString();
 
+                    SharedPreferences.Editor editor = sp.edit();
+                    editor.putString("profession", professionStr);
+                    editor.putString("language", languageStr);
+                    editor.commit();
+                    openHomeActivity();
+                }
+            });
 
+        }
 
         spinnerLanguages.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override

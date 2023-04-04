@@ -19,10 +19,14 @@ import com.android.documed.databinding.ActivityMainBinding;
 public class HomeActivity extends AppCompatActivity {
 
     ActivityHomeBinding binding;
+    SharedPreferences sp;
+    SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        sp = getSharedPreferences("MyUserPrefs", Context.MODE_PRIVATE);
+
         binding = ActivityHomeBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         replaceFragment(new HomeFragment());
@@ -41,7 +45,7 @@ public class HomeActivity extends AppCompatActivity {
                     replaceFragment(new ListFragment());
                     break;
                 case R.id.menu:
-                    replaceFragment(new MenuFragment());
+                    replaceFragment(new MenuFragment(sp, editor));
                     break;
             }
 
