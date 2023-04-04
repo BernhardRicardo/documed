@@ -56,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
 
         initLanguageList();
         initProfessionList();
+        button.setEnabled(false);
 
         Spinner spinnerLanguages = findViewById(R.id.spinner_languages);
         mLanguageSpinnerAdapter = new SpinnerAdapter(this, mLanguageList);
@@ -87,6 +88,14 @@ public class MainActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 SpinnerItem clickedItem = (SpinnerItem) parent.getItemAtPosition(position);
                 String clickedLanguageName = clickedItem.getName();
+                if(clickedLanguageName.equals("English")){
+                    ContainerAndGlobal.setUserLanguage(ContainerAndGlobal.language.ENGLISH);
+                }else if(clickedLanguageName.equals("German")) {
+                    ContainerAndGlobal.setUserLanguage(ContainerAndGlobal.language.GERMAN);
+                }else{
+                    ContainerAndGlobal.setUserLanguage(ContainerAndGlobal.language.NONE);
+                }
+                if(ContainerAndGlobal.getUserProfession() != ContainerAndGlobal.profession.NONE){button.setEnabled(true);}
                 Toast.makeText(MainActivity.this, clickedLanguageName + " selected", Toast.LENGTH_SHORT).show();
 
             }
@@ -100,6 +109,16 @@ public class MainActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 SpinnerItem clickedItem = (SpinnerItem) parent.getItemAtPosition(position);
                 String clickedProfessionName = clickedItem.getName();
+                if(clickedProfessionName.equals("Doctor")){
+                    ContainerAndGlobal.setUserProfession(ContainerAndGlobal.profession.DOCTOR);
+                }else if(clickedProfessionName.equals("Laboratory Assistant")) {
+                    ContainerAndGlobal.setUserProfession(ContainerAndGlobal.profession.LAB_ASSISTANT);
+                }else if(clickedProfessionName.equals("Administrator")) {
+                    ContainerAndGlobal.setUserProfession(ContainerAndGlobal.profession.ADMINISTRATOR);
+                }else{
+                    ContainerAndGlobal.setUserProfession(ContainerAndGlobal.profession.NONE);
+                }
+                if(ContainerAndGlobal.getUserLanguage() != ContainerAndGlobal.language.NONE){button.setEnabled(true);}
                 Toast.makeText(MainActivity.this, clickedProfessionName + " selected", Toast.LENGTH_SHORT).show();
             }
 

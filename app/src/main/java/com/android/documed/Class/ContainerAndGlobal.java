@@ -23,9 +23,11 @@ public class ContainerAndGlobal {
     private static ArrayList<Patient> bloodPatient = new ArrayList<>();
     private static ArrayList<Patient> filteredList = new ArrayList<>();
 
-    enum profession{DOCTOR, LAB_ASSISTANT, ADMINISTRATOR}
+    public enum profession{NONE, DOCTOR, LAB_ASSISTANT, ADMINISTRATOR}
+    public enum language{NONE, ENGLISH, GERMAN}
 
-    profession userProfession;
+    private static profession userProfession = profession.NONE;
+    private static language userLanguage = language.NONE;
 
     private static boolean firstTime = true;
     private static Patient tmpPatient;
@@ -33,12 +35,12 @@ public class ContainerAndGlobal {
     private static Patient clickedPatient;
 
 
-    public static boolean isFormContainsEmptyElement(ArrayList<EditText> elements){
-        boolean empty = false;
+    public static boolean isFormFilled(ArrayList<EditText> elements){
+        boolean empty = true;
         for(EditText e:elements){
             if(e.getText().toString().isEmpty()){
-                e.setError("Cannot be blank");
-                empty = true;
+                e.setError("contains empty element");
+                empty = false;
             }
         }
         return empty;
@@ -46,9 +48,8 @@ public class ContainerAndGlobal {
 
     public static boolean isDataDuplicate(ArrayList<EditText> elements){
         boolean duplicate = false;
-        int insurance = Integer.parseInt(elements.get(3).getText().toString());
-        int phone = Integer.parseInt(elements.get(4).getText().toString());
-        int zimmerNummer = Integer.parseInt(elements.get(5).getText().toString());
+        String insurance = elements.get(3).getText().toString();
+//        String zimmerNummer = elements.get(5).getText().toString();
         for(Patient patient:adminPatientList){
             if(patient.getInsuranceNumber().equals(insurance)){
                 elements.get(3).setError("Insurance number already existed");
@@ -93,8 +94,7 @@ public class ContainerAndGlobal {
                 (String) patient.get("address").toString(),
                 (String) patient.get("phone").toString(),
                 (String) patient.get("insurance").toString(),
-                (String) patient.get("room").toString(),
-                (String) patient.get("note").toString()
+                (String) patient.get("room").toString()
         );
         addPatient(tmpPatient);
     }
@@ -131,11 +131,15 @@ public class ContainerAndGlobal {
     public static Patient getClickedPatient() {
         return clickedPatient;
     }
+    public static profession getUserProfession() {return userProfession;}
+    public static language getUserLanguage() {return userLanguage;}
 
-    public profession getUserProfession() {return userProfession;}
+    public static void setUserLanguage(language userLanguage) {
+        ContainerAndGlobal.userLanguage = userLanguage;
+    }
 
-    public void setUserProfession(profession userProfession) {
-        this.userProfession = userProfession;
+    public static void setUserProfession(profession userProfession) {
+        ContainerAndGlobal.userProfession = userProfession;
     }
 
     public static void setClickedPatient(Patient clickedPatient) {

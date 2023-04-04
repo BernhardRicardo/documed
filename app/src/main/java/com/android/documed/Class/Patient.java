@@ -19,7 +19,7 @@ public class Patient {
         this.roomNumber = roomNumber;
     }
 
-    public Patient(String name, String birthdate, String sex, String status, String address, String phone, String insuranceNumber, String roomNumber, String note) {
+    public Patient(String name, String birthdate, String sex, String status, String address, String phone, String insuranceNumber, String roomNumber) {
         this.name = name;
         this.birthdate = birthdate;
         this.sex = sex;
@@ -27,7 +27,6 @@ public class Patient {
         this.phone = phone;
         this.insuranceNumber = insuranceNumber;
         this.roomNumber = roomNumber;
-        this.note = note;
         this.status = status;
     }
 

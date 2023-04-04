@@ -7,8 +7,7 @@
     "address" : "Riedeselstraße 24, 64283 Darmstadt",
     "phone" : "01621572562",
     "insurance" : "T351257623",
-    "room": "01.1",
-    "note" : "patient regain appetite"
+    "room": "01.1"
   },{
     "name" : "Emma Green",
     "birthdate" : "1993-06-12",
@@ -17,8 +16,7 @@
     "address" : "Jahnstraße 53, 64283 Darmstadt",
     "phone" : "01621572562",
     "insurance" : "T351257623",
-    "room": "03.1",
-    "note" : "fever, and dehydration"
+    "room": "03.1"
   },{
     "name" : "Bill Hardy",
     "birthdate" : "1972-01-02",
@@ -27,7 +25,6 @@
     "address" : "Riedeselstraße 24, 6428 Darmstadt",
     "phone" : "01621572562",
     "insurance" : "T351257623",
-    "room": "05.1",
-    "note" : ""
+    "room": "05.1"
   }
 ]

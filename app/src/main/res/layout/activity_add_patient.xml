@@ -19,20 +19,8 @@
         android:layout_centerHorizontal="true"
         />
 
-    <ImageButton
-        android:id="@+id/btnBack"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:background="@drawable/curved_white"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginTop="36dp"
-        android:layout_marginLeft="25dp"
-        app:srcCompat="@drawable/baseline_arrow_back_ios_new_24" />
-
     <TextView
-        android:layout_below="@+id/btnBack"
+        android:layout_below="@+id/tvTitle"
         android:id="@+id/tvName"
         android:layout_marginTop="25dp"
         android:layout_marginLeft="25dp"
@@ -80,6 +68,30 @@
 
     <TextView
         android:layout_below="@+id/datePicker"
+        android:id="@+id/tvSex"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="25dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:text="Sex"
+        tools:layout_editor_absoluteX="12dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <Spinner
+        android:id="@+id/spinnerSex"
+        android:layout_below="@+id/tvSex"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="18"
+        android:inputType="textPersonName"
+        android:text="" />
+
+    <TextView
+        android:layout_below="@+id/spinnerSex"
         android:id="@+id/tvAddress"
         android:layout_marginTop="15dp"
         android:layout_marginLeft="25dp"
@@ -150,10 +162,11 @@
         android:text="" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/submit"
+        android:id="@+id/btnAdd"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="75dp"
+        android:layout_marginTop="5dp"
         android:background="@drawable/curved_white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

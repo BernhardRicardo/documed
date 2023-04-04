@@ -1,6 +1,7 @@
 package com.android.documed.Fragment;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.android.documed.Activity.AddPatientActivity;
 import com.android.documed.Activity.HomeActivity;
@@ -36,18 +38,20 @@ public class ListFragment extends Fragment implements RecyclerViewInterface {
     LinearLayoutManager layoutManager;
     RecyclerViewAdapter adapter;
 
+    private Button btnAdd;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_list, container, false);
 
-
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view,savedInstanceState);
+
+        btnAdd = (Button) view.findViewById(R.id.btnAddPatient);
 
         try {
             RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
@@ -61,6 +65,14 @@ public class ListFragment extends Fragment implements RecyclerViewInterface {
         ){
             e.printStackTrace();
         }
+
+        btnAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), AddPatientActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
