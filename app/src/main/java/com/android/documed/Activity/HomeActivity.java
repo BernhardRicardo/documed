@@ -42,7 +42,7 @@ public class HomeActivity extends AppCompatActivity {
                     replaceFragment(new HomeFragment());
                     break;
                 case R.id.list:
-                    replaceFragment(new ListFragment());
+                    replaceFragment(new ListFragment(sp));
                     break;
                 case R.id.menu:
                     replaceFragment(new MenuFragment(sp, editor));

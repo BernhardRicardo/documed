@@ -37,8 +37,14 @@ public class ListFragment extends Fragment implements RecyclerViewInterface {
 
     LinearLayoutManager layoutManager;
     RecyclerViewAdapter adapter;
+    SharedPreferences sp;
 
     private Button btnAdd;
+
+    public ListFragment(SharedPreferences sp) {
+        this.sp = sp;
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -52,6 +58,11 @@ public class ListFragment extends Fragment implements RecyclerViewInterface {
         super.onViewCreated(view,savedInstanceState);
 
         btnAdd = (Button) view.findViewById(R.id.btnAddPatient);
+        if(sp.getString("profession", "") == "Administrator"){
+            btnAdd.setVisibility(View.VISIBLE);
+        }else {
+            btnAdd.setVisibility(View.GONE);
+        }
 
         try {
             RecyclerView recyclerView = view.findViewById(R.id.recyclerView);

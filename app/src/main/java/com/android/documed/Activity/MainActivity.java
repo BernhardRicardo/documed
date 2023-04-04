@@ -75,9 +75,6 @@ public class MainActivity extends AppCompatActivity {
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    professionStr = spinnerProfession.getSelectedItem().toString();
-                    languageStr = spinnerLanguages.getSelectedItem().toString();
-
                     SharedPreferences.Editor editor = sp.edit();
                     editor.putString("profession", professionStr);
                     editor.putString("language", languageStr);
@@ -94,8 +91,10 @@ public class MainActivity extends AppCompatActivity {
                 SpinnerItem clickedItem = (SpinnerItem) parent.getItemAtPosition(position);
                 String clickedLanguageName = clickedItem.getName();
                 if(clickedLanguageName.equals("English")){
+                    languageStr = "English";
                     ContainerAndGlobal.setUserLanguage(ContainerAndGlobal.language.ENGLISH);
                 }else if(clickedLanguageName.equals("German")) {
+                    languageStr = "German";
                     ContainerAndGlobal.setUserLanguage(ContainerAndGlobal.language.GERMAN);
                 }else{
                     ContainerAndGlobal.setUserLanguage(ContainerAndGlobal.language.NONE);
@@ -115,10 +114,13 @@ public class MainActivity extends AppCompatActivity {
                 SpinnerItem clickedItem = (SpinnerItem) parent.getItemAtPosition(position);
                 String clickedProfessionName = clickedItem.getName();
                 if(clickedProfessionName.equals("Doctor")){
+                    professionStr = "Doctor";
                     ContainerAndGlobal.setUserProfession(ContainerAndGlobal.profession.DOCTOR);
                 }else if(clickedProfessionName.equals("Laboratory Assistant")) {
+                    professionStr = "Laboratory Assistant";
                     ContainerAndGlobal.setUserProfession(ContainerAndGlobal.profession.LAB_ASSISTANT);
                 }else if(clickedProfessionName.equals("Administrator")) {
+                    professionStr = "Administrator";
                     ContainerAndGlobal.setUserProfession(ContainerAndGlobal.profession.ADMINISTRATOR);
                 }else{
                     ContainerAndGlobal.setUserProfession(ContainerAndGlobal.profession.NONE);
